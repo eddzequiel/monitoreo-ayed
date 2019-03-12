@@ -4,6 +4,7 @@ Monitores
 
   - Eddy Moreno
   - Marcos Sevilla
+  - Jonathan Vargas
  
 Instrucciones para instalar git y descargar el repo
 
