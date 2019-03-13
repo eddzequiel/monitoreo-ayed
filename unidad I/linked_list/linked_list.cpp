@@ -14,42 +14,42 @@ typedef struct registro
 
 ///Declaracion de las funciones a implementar
 nodo *nuevonodo (int info);
-void agregar (nodo **primerNodo, int dato);
-void imprimir(nodo *primerNodo);
-void borrar(nodo **primerNodo, int dato);
+void agregarALista (nodo **primerNodo, int dato);
+void imprimirLista(nodo *primerNodo);
+void borrarDeLista(nodo **primerNodo, int dato);
 
 ///Proceso principal
 int main(int argc, char** argv)
 {
-    int x;
     nodo *primerNodo;
+    int x;
+    printf("¡Es momento de agregar valores a la lista!\n\n");
     primerNodo=NULL;
-    printf("Es momento de agregar valores a la lista :\n\n");
     do
     {
         printf("Ingrese el dato a agregar (-1= Terminar): \n");
         scanf("%d",&x);
         if (x!=-1)
-            agregar(&primerNodo,x);
+            agregarALista(&primerNodo,x);
     } while(x!=-1);
 
-    imprimir(primerNodo);
+    imprimirLista(primerNodo);
 
     do
     {
         printf("Ingrese el dato a borrar (-1= Terminar): \n");
         scanf("%d",&x);
         if(x!=-1)
-            borrar(&primerNodo,x);
+            borrarDeLista(&primerNodo,x);
     } while(x!=-1);
 
-    imprimir(primerNodo);
+    imprimirLista(primerNodo);
 
     return 0;
 }
 
 ///Funcion que crea un nodo
-void agregar(nodo **primerNodo, int dato)
+void agregarALista(nodo **primerNodo, int dato)
 {
     nodo *nuevo;
     nuevo=nuevonodo(dato);
@@ -73,7 +73,7 @@ nodo *nuevonodo (int info)
 }
 
 ///Funcion que borra los nodos
-void borrar(nodo **primerNodo, int dato)
+void borrarDeLista(nodo **primerNodo, int dato)
 {
     nodo *nodoAnterior, *nodoActual;
     int encontrado=0;
@@ -89,6 +89,7 @@ void borrar(nodo **primerNodo, int dato)
             nodoActual=nodoActual->nodoSiguiente;
         }
     }
+
     if(nodoActual!=NULL)
         if(nodoActual==*primerNodo)
             *primerNodo=nodoActual->nodoSiguiente;
@@ -101,7 +102,7 @@ void borrar(nodo **primerNodo, int dato)
 }
 
 ///Funcion que imprime los nodos
-void imprimir (nodo *primerNodo)
+void imprimirLista (nodo *primerNodo)
 {
     printf("\n\n");
 
