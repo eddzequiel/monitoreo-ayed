@@ -63,7 +63,7 @@ void fuerzabruta(char cad[TAM], char subcad[TAM], int lcad, int lsubcad)
             flag = 0;
     }
 
-    if (flag = 0)
+    if (flag == 0)
     {
         cout << "\nPatrón de cadena no encontrado" << endl;
     }
